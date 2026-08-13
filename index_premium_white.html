@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worli MTK App</title>
+<meta name="description" content="Download the official Worli MTK Android application.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#f7f4ed;
+  --panel:#ffffff;
+  --panel-2:#fbfaf7;
+  --gold:#e5b85c;
+  --gold-2:#ffd98a;
+  --green:#4f8f5b;
+  --text:#241f18;
+  --muted:#706b62;
+  --line:rgba(68,55,35,.12);
+  --shadow:0 24px 70px rgba(55,43,22,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(229,184,92,.22),transparent 34%),
+    radial-gradient(circle at 0% 45%,rgba(79,143,91,.10),transparent 28%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:linear-gradient(rgba(80,60,30,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(80,60,30,.035) 1px,transparent 1px);
+  background-size:36px 36px;
+  mask-image:linear-gradient(to bottom,black,transparent 80%);
+}
+
+.wrap{
+  position:relative;
+  max-width:560px;
+  margin:0 auto;
+  min-height:100vh;
+  overflow:hidden;
+  background:linear-gradient(180deg,#ffffff 0%,#fbf9f3 100%);
+  box-shadow:var(--shadow);
+}
+
+.band{
+  background:linear-gradient(90deg,#b98225,#e5b85c,#b98225);
+  color:#171108;
+  text-align:center;
+  padding:9px 12px;
+  font-size:11px;
+  letter-spacing:.12em;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+header{
+  padding:38px 25px 30px;
+  text-align:center;
+  position:relative;
+}
+
+header:after{
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  bottom:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--line),transparent);
+}
+
+.mark{
+  width:112px;
+  height:112px;
+  margin:0 auto 20px;
+  padding:5px;
+  border-radius:30px;
+  background:linear-gradient(145deg,var(--gold-2),#9c6a19);
+  box-shadow:0 12px 38px rgba(229,184,92,.18);
+  position:relative;
+}
+
+.mark:before{
+  content:"";
+  position:absolute;
+  inset:-7px;
+  border:1px solid rgba(229,184,92,.24);
+  border-radius:34px;
+}
+
+.mark img{
+  width:100%;
+  height:100%;
+  border-radius:25px;
+  object-fit:contain;
+  display:block;
+  background:#f1eee6;
+}
+
+h1{
+  font-family:'Fraunces',serif;
+  font-size:34px;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  color:#2b2318;
+}
+
+.tag{
+  font-size:14px;
+  color:var(--muted);
+  margin:10px auto 0;
+  max-width:390px;
+}
+
+.loc{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:16px;
+  font-size:11.5px;
+  color:#f5d991;
+  background:rgba(229,184,92,.09);
+  border:1px solid rgba(229,184,92,.22);
+  padding:6px 13px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.intro{
+  padding:25px 27px 8px;
+  font-size:14px;
+  color:var(--muted);
+  text-align:center;
+}
+
+.cta-block{
+  padding:22px 27px 10px;
+}
+
+.cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  background:linear-gradient(135deg,#f2cb72,#c48b29);
+  color:#1b1408;
+  font-weight:800;
+  font-size:16px;
+  padding:17px 18px;
+  border-radius:15px;
+  text-decoration:none;
+  transition:.22s ease;
+  box-shadow:0 12px 30px rgba(229,184,92,.20),inset 0 1px 0 rgba(255,255,255,.55);
+  position:relative;
+  overflow:hidden;
+}
+
+.cta:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-70%;
+  width:45%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);
+  animation:shine 3.2s infinite;
+}
+
+.cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 38px rgba(229,184,92,.28);
+}
+
+.cta:active{transform:scale(.985)}
+
+.cta .ic{font-size:19px}
+
+.cta-sub{
+  text-align:center;
+  font-size:11.5px;
+  color:#777e89;
+  margin-top:10px;
+}
+
+.grid{
+  padding:20px 27px 8px;
+  display:grid;
+  gap:12px;
+}
+
+.card{
+  background:linear-gradient(145deg,#ffffff,#faf7ef);
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:17px 18px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(55,43,22,.08);
+  transition:.2s ease;
+}
+
+.card:hover{
+  border-color:rgba(229,184,92,.25);
+  transform:translateY(-2px);
+}
+
+.card .row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:6px;
+}
+
+.card .ic{
+  width:36px;
+  height:36px;
+  border-radius:11px;
+  background:rgba(229,184,92,.10);
+  border:1px solid rgba(229,184,92,.18);
+  color:var(--gold-2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  flex-shrink:0;
+}
+
+.card h3{
+  font-size:15px;
+  font-weight:700;
+  color:#2d251b;
+}
+
+.card p{
+  font-size:13px;
+  color:var(--muted);
+  padding-left:46px;
+}
+
+.products{
+  padding:25px 27px 8px;
+}
+
+.products h2{
+  font-family:'Fraunces',serif;
+  font-size:20px;
+  color:#2b2318;
+  margin-bottom:14px;
+}
+
+.plist{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.plist li{
+  background:#fffdf8;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:12px 13px;
+  font-size:12.5px;
+  font-weight:600;
+  color:#514a40;
+}
+
+footer{
+  margin-top:28px;
+  padding:23px 27px 34px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+
+.trust{
+  display:inline-flex;
+  gap:7px;
+  flex-wrap:wrap;
+  justify-content:center;
+  font-size:11px;
+  color:#9a6d1c;
+  font-weight:700;
+}
+
+.trust span{
+  background:rgba(229,184,92,.10);
+  border:1px solid rgba(229,184,92,.16);
+  padding:5px 10px;
+  border-radius:999px;
+}
+
+.contact{
+  margin-top:13px;
+  font-size:12px;
+  color:#777064;
+}
+
+@keyframes shine{
+  0%,55%{left:-70%}
+  75%,100%{left:125%}
+}
+
+@media(max-width:380px){
+  header,.cta-block,.grid,.products,footer{
+    padding-left:20px;
+    padding-right:20px;
+  }
+  h1{font-size:29px}
+  .mark{width:98px;height:98px}
+}
+</style>
+
+<!-- META PIXEL: Replace YOUR_META_PIXEL_ID with your real Pixel ID -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','YOUR_META_PIXEL_ID');
+fbq('track','PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
+</noscript>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="band">✦ PREMIUM ANDROID EXPERIENCE ✦</div>
+
+  <header>
+    <div class="mark">
+      <img src="images/logo.png" alt="Worli MTK Logo">
+    </div>
+
+    <h1>Worli MTK App</h1>
+
+    <div class="tag">
+      Download the official Android application
+      for a fast and smooth experience.
+    </div>
+
+    <div class="loc">📱 Android Application</div>
+  </header>
+
+  <div class="intro">
+    Get the latest application directly from
+    our official download page.
+  </div>
+
+  <div class="cta-block">
+    <a class="cta"
+       href="apk/worlimtk.apk"
+       download="worlimtk.apk"
+       onclick="trackAPKDownload()">
+      <span class="ic">📲</span>
+      Download APK
+    </a>
+
+    <div class="cta-sub">
+      Official Android APK • worlimtk.apk
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="row">
+        <div class="ic">✓</div>
+        <h3>Simple Experience</h3>
+      </div>
+      <p>आसान और मोबाइल-फ्रेंडली इंटरफेस।</p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="ic">📱</div>
+        <h3>Android App</h3>
+      </div>
+      <p>Android users के लिए application download करें।</p>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="ic">⚡</div>
+        <h3>Fast Access</h3>
+      </div>
+      <p>Application को सीधे APK file से access करें।</p>
+    </div>
+
+  </div>
+
+  <div class="products">
+    <h2>App Information</h2>
+    <ul class="plist">
+      <li>📱 Android App</li>
+      <li>⚡ Fast Access</li>
+      <li>🔄 Regular Updates</li>
+      <li>🔒 Secure Download</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="trust">
+      <span>✓ Official Download</span>
+      <span>✓ Android</span>
+    </div>
+    <div class="contact">
+      Download the application from this page.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function trackAPKDownload(){
+  if(typeof fbq === 'function'){
+    fbq('trackCustom','APKDownload',{
+      app_name:'Worli MTK',
+      apk_name:'worlimtk.apk'
+    });
+  }
+}
+</script>
+
+</body>
+</html>
