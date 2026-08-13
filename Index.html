@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worli Matka</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --soil: #4a3423;
+    --soil-dark: #2e2013;
+    --wheat: #d9a441;
+    --wheat-dark: #a97a1f;
+    --leaf: #3c6e3f;
+    --leaf-dark: #24461f;
+    --cream: #faf3e4;
+    --paper: #fffdf8;
+    --ink: #2b2318;
+    --ink-soft: #6b5f4d;
+    --line: #e3d6bb;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  .wrap{max-width:520px; margin:0 auto; min-height:100vh; background:var(--paper); box-shadow:0 0 40px rgba(0,0,0,0.06);}
+
+  .band{
+    background:var(--leaf);
+    color:#eef4e5;
+    text-align:center;
+    padding:9px 12px;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    font-weight:600;
+    text-transform:uppercase;
+  }
+
+  header{
+    padding:40px 28px 28px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+  }
+  .mark{
+    width:84px; height:84px;
+    margin:0 auto 18px;
+    border-radius:20px;
+    background:var(--soil);
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .mark svg{width:44px; height:44px;}
+  h1{
+    font-family:'Fraunces', serif;
+    font-size:32px;
+    font-weight:700;
+    color:var(--soil-dark);
+    letter-spacing:-0.01em;
+  }
+  .tag{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin-top:6px;
+    font-weight:500;
+  }
+  .loc{
+    display:inline-block;
+    margin-top:14px;
+    font-size:12.5px;
+    color:var(--leaf-dark);
+    background:#e9f1e3;
+    padding:5px 14px;
+    border-radius:20px;
+    font-weight:600;
+  }
+
+  .intro{
+    padding:26px 28px 6px;
+    font-size:15px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+
+  .cta-block{
+    padding:22px 28px 10px;
+  }
+  .cta{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%;
+    background:var(--wheat-dark);
+    color:#fffaf0;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:16.5px;
+    padding:16px;
+    border-radius:12px;
+    text-decoration:none;
+    letter-spacing:0.01em;
+  }
+  .cta span.ic{font-size:18px;}
+  .cta-sub{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+
+  .grid{
+    padding:20px 28px 8px;
+    display:grid;
+    gap:14px;
+  }
+  .card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 20px;
+  }
+  .card .row{display:flex; align-items:center; gap:10px; margin-bottom:6px;}
+  .card .ic{
+    width:34px; height:34px;
+    border-radius:9px;
+    background:var(--leaf);
+    color:#eef4e5;
+    display:flex; align-items:center; justify-content:center;
+    font-size:16px;
+    flex-shrink:0;
+  }
+  .card h3{
+    font-size:16px;
+    font-weight:600;
+    color:var(--soil-dark);
+  }
+  .card p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    padding-left:44px;
+  }
+
+  .products{
+    padding:24px 28px 6px;
+  }
+  .products h2{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    color:var(--soil-dark);
+    margin-bottom:14px;
+  }
+  .plist{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .plist li{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink);
+  }
+  .plist li::before{content:" "; }
+
+  footer{
+    margin-top:26px;
+    padding:22px 28px 34px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .trust{
+    display:inline-flex; gap:8px; flex-wrap:wrap; justify-content:center;
+    font-size:12px; color:var(--leaf-dark); font-weight:600;
+    margin-bottom:14px;
+  }
+  .trust span{
+    background:#e9f1e3; padding:5px 11px; border-radius:20px;
+  }
+  .contact{
+    font-size:13.5px; color:var(--ink-soft);
+  }
+  .contact a{color:var(--wheat-dark); font-weight:600; text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="band">🔥Most Trending App</div>
+
+  <header>
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#e9d9ae" stroke-width="1.6">
+        <path d="M12 2C9 6 8 9 8 12a4 4 0 0 0 8 0c0-3-1-6-4-10Z"/>
+        <path d="M12 16v6"/>
+        <path d="M8 21h8"/>
+      </svg>
+    </div>
+    <h1>Worli Matka App</h1>
+    <div class="tag">DownloadThe Official Wolri Matka App Android App for Fast ResultsAnd Smooth Experience</div>
+
+  </header>
+  <div class="cta-block">
+    <a class="cta" href="tel:+916376668156">
+      <span class="ic">📞</span> अभी कॉल करें
+    </a>
+    <div class="cta-sub">सुबह 8 बजे से शाम 8 बजे तक उपलब्ध</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="row">
+        <div class="ic">✓</div>
+        <h3>गुणवत्ता खाद</h3>
+      </div>
+      <p>प्रमाणित उर्वरक, फसल अनुसार सही मात्रा में।</p>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="ic">₹</div>
+        <h3>उचित दाम</h3>
+      </div>
+      <p>बाज़ार भाव पर ईमानदार कीमत, कोई छिपा खर्च नहीं।</p>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="ic">👨‍🌾</div>
+        <h3>किसानों का भरोसा</h3>
+      </div>
+      <p>2015 से क्षेत्र के किसानों की सेवा में।</p>
+    </div>
+  </div>
+
+  <div class="products">
+    <h2>उपलब्ध उत्पाद</h2>
+    <ul class="plist">
+      <li>यूरिया खाद</li>
+      <li>डीएपी खाद</li>
+      <li>बीज</li>
+      <li>कीटनाशक</li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="trust">
+      <span>✓ स्थानीय दुकान</span>
+      <span>✓ सीधी बात</span>
+    </div>
+    <div class="contact">
+      संपर्क करें: <a href="tel:+916376668156">+91 63766 68156</a><br>
+      Plot No 12, Endwa, Sawai Madhopur, Rajasthan
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
