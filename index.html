@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Worli MTK App</title>
 <meta name="description" content="Download the official Worli MTK Android application.">
 
@@ -12,19 +13,23 @@
 :root{
   --bg:#f7f4ed;
   --panel:#ffffff;
-  --panel-2:#fbfaf7;
   --gold:#e5b85c;
   --gold-2:#ffd98a;
-  --green:#4f8f5b;
   --text:#241f18;
   --muted:#706b62;
   --line:rgba(68,55,35,.12);
   --shadow:0 24px 70px rgba(55,43,22,.12);
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:'Inter',sans-serif;
@@ -34,17 +39,6 @@ body{
     var(--bg);
   color:var(--text);
   line-height:1.6;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background-image:linear-gradient(rgba(80,60,30,.035) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(80,60,30,.035) 1px,transparent 1px);
-  background-size:36px 36px;
-  mask-image:linear-gradient(to bottom,black,transparent 80%);
 }
 
 .wrap{
@@ -95,14 +89,6 @@ header:after{
   position:relative;
 }
 
-.mark:before{
-  content:"";
-  position:absolute;
-  inset:-7px;
-  border:1px solid rgba(229,184,92,.24);
-  border-radius:34px;
-}
-
 .mark img{
   width:100%;
   height:100%;
@@ -133,7 +119,7 @@ h1{
   gap:6px;
   margin-top:16px;
   font-size:11.5px;
-  color:#f5d991;
+  color:#9a6d1c;
   background:rgba(229,184,92,.09);
   border:1px solid rgba(229,184,92,.22);
   padding:6px 13px;
@@ -166,7 +152,9 @@ h1{
   border-radius:15px;
   text-decoration:none;
   transition:.22s ease;
-  box-shadow:0 12px 30px rgba(229,184,92,.20),inset 0 1px 0 rgba(255,255,255,.55);
+  box-shadow:
+    0 12px 30px rgba(229,184,92,.20),
+    inset 0 1px 0 rgba(255,255,255,.55);
   position:relative;
   overflow:hidden;
 }
@@ -178,19 +166,27 @@ h1{
   left:-70%;
   width:45%;
   height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
   transform:skewX(-20deg);
   animation:shine 3.2s infinite;
 }
 
 .cta:hover{
   transform:translateY(-2px);
-  box-shadow:0 16px 38px rgba(229,184,92,.28);
 }
 
-.cta:active{transform:scale(.985)}
+.cta:active{
+  transform:scale(.985);
+}
 
-.cta .ic{font-size:19px}
+.cta .ic{
+  font-size:19px;
+}
 
 .cta-sub{
   text-align:center;
@@ -210,7 +206,6 @@ h1{
   border:1px solid var(--line);
   border-radius:17px;
   padding:17px 18px;
-  backdrop-filter:blur(10px);
   box-shadow:0 10px 30px rgba(55,43,22,.08);
   transition:.2s ease;
 }
@@ -233,7 +228,7 @@ h1{
   border-radius:11px;
   background:rgba(229,184,92,.10);
   border:1px solid rgba(229,184,92,.18);
-  color:var(--gold-2);
+  color:#9a6d1c;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -312,49 +307,103 @@ footer{
 }
 
 @keyframes shine{
-  0%,55%{left:-70%}
-  75%,100%{left:125%}
+  0%,55%{
+    left:-70%;
+  }
+  75%,100%{
+    left:125%;
+  }
 }
 
 @media(max-width:380px){
-  header,.cta-block,.grid,.products,footer{
+  header,
+  .cta-block,
+  .grid,
+  .products,
+  footer{
     padding-left:20px;
     padding-right:20px;
   }
-  h1{font-size:29px}
-  .mark{width:98px;height:98px}
+
+  h1{
+    font-size:29px;
+  }
+
+  .mark{
+    width:98px;
+    height:98px;
+  }
 }
 </style>
 
-<!-- META PIXEL: Replace YOUR_META_PIXEL_ID with your real Pixel ID -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
+{
+  if(f.fbq)return;
 
+  n=f.fbq=function(){
+    n.callMethod ?
+    n.callMethod.apply(n,arguments) :
+    n.queue.push(arguments)
+  };
+
+  if(!f._fbq)f._fbq=n;
+
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+
+  t=b.createElement(e);
+  t.async=!0;
+  t.src=v;
+
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}
+(
+  window,
+  document,
+  'script',
+  'https://connect.facebook.net/en_US/fbevents.js'
+);
+
+/*
+  IMPORTANT:
+  YOUR_META_PIXEL_ID ko apne real Meta Pixel ID se replace karein.
+*/
 fbq('init','YOUR_META_PIXEL_ID');
 fbq('track','PageView');
 </script>
 
 <noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
+<img
+  height="1"
+  width="1"
+  style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"
+/>
 </noscript>
+
 </head>
 
 <body>
+
 <div class="wrap">
 
-  <div class="band">✦ PREMIUM ANDROID EXPERIENCE ✦</div>
+  <div class="band">
+    ✦ PREMIUM ANDROID EXPERIENCE ✦
+  </div>
 
   <header>
+
     <div class="mark">
-      <img src="images/logo.png" alt="Worli MTK Logo">
+      <img
+        src="/images/logo.png"
+        alt="Worli MTK Logo"
+        onerror="this.style.display='none'"
+      >
     </div>
 
     <h1>Worli MTK App</h1>
@@ -364,7 +413,10 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
       for a fast and smooth experience.
     </div>
 
-    <div class="loc">📱 Android Application</div>
+    <div class="loc">
+      📱 Android Application
+    </div>
+
   </header>
 
   <div class="intro">
@@ -373,17 +425,22 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
   </div>
 
   <div class="cta-block">
-<a class="cta"
-   href="/apk/worlimtk.apk"
-   download
-   onclick="trackAPKDownload()">
-  <span class="ic">📲</span>
-  Download APK
-</a>
+
+    <!-- APK DOWNLOAD BUTTON -->
+    <a
+      class="cta"
+      href="/apk/worlimtk.apk"
+      download="worlimtk.apk"
+      onclick="trackAPKDownload(event)"
+    >
+      <span class="ic">📲</span>
+      Download APK
+    </a>
 
     <div class="cta-sub">
       Official Android APK • worlimtk.apk
     </div>
+
   </div>
 
   <div class="grid">
@@ -393,7 +450,10 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
         <div class="ic">✓</div>
         <h3>Simple Experience</h3>
       </div>
-      <p>आसान और मोबाइल-फ्रेंडली इंटरफेस।</p>
+
+      <p>
+        आसान और मोबाइल-फ्रेंडली इंटरफेस।
+      </p>
     </div>
 
     <div class="card">
@@ -401,7 +461,10 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
         <div class="ic">📱</div>
         <h3>Android App</h3>
       </div>
-      <p>Android users के लिए application download करें।</p>
+
+      <p>
+        Android users के लिए application download करें।
+      </p>
     </div>
 
     <div class="card">
@@ -409,41 +472,67 @@ src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/>
         <div class="ic">⚡</div>
         <h3>Fast Access</h3>
       </div>
-      <p>Application को सीधे APK file से access करें।</p>
+
+      <p>
+        Application को सीधे APK file से access करें।
+      </p>
     </div>
 
   </div>
 
   <div class="products">
-    <h2>App Information</h2>
+
+    <h2>
+      App Information
+    </h2>
+
     <ul class="plist">
       <li>📱 Android App</li>
       <li>⚡ Fast Access</li>
       <li>🔄 Regular Updates</li>
       <li>🔒 Secure Download</li>
     </ul>
+
   </div>
 
   <footer>
+
     <div class="trust">
       <span>✓ Official Download</span>
       <span>✓ Android</span>
     </div>
+
     <div class="contact">
       Download the application from this page.
     </div>
+
   </footer>
 
 </div>
 
 <script>
-function trackAPKDownload(){
+function trackAPKDownload(event){
+
+  /*
+    Pixel event track karega,
+    lekin download ko block nahi karega.
+  */
+
   if(typeof fbq === 'function'){
-    fbq('trackCustom','APKDownload',{
-      app_name:'Worli MTK',
-      apk_name:'worlimtk.apk'
-    });
+    fbq(
+      'trackCustom',
+      'APKDownload',
+      {
+        app_name:'Worli MTK',
+        apk_name:'worlimtk.apk'
+      }
+    );
   }
+
+  /*
+    Normal browser download ko continue
+    hone diya ja raha hai.
+  */
 }
 </script>
 
