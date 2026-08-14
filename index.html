@@ -419,22 +419,20 @@ fbq('track','PageView');
 
   </header>
 
-  <div class="intro">
-    Get the latest application directly from
-    our official download page.
-  </div>
-
   <div class="cta-block">
 
     <!-- APK DOWNLOAD BUTTON -->
-    <a class="cta"
-   href="worlimtk.apk"
+<a class="cta"
+   href="/worlimtk.apk"
    download="worlimtk.apk"
    onclick="trackAPKDownload(event)">
   <span class="ic">📲</span>
   Download APK
 </a>
 
+<div class="cta-sub">
+  Official Android APK • worlimtk.apk
+</div>
     <div class="cta-sub">
       Official Android APK • worlimtk.apk
     </div>
@@ -510,27 +508,12 @@ fbq('track','PageView');
 
 <script>
 function trackAPKDownload(event){
-
-  /*
-    Pixel event track karega,
-    lekin download ko block nahi karega.
-  */
-
   if(typeof fbq === 'function'){
-    fbq(
-      'trackCustom',
-      'APKDownload',
-      {
-        app_name:'Worli MTK',
-        apk_name:'worlimtk.apk'
-      }
-    );
+    fbq('trackCustom','APKDownload',{
+      app_name:'Worli MTK',
+      apk_name:'worlimtk.apk'
+    });
   }
-
-  /*
-    Normal browser download ko continue
-    hone diya ja raha hai.
-  */
 }
 </script>
 
